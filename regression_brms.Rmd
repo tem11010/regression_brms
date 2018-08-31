@@ -1,0 +1,49 @@
+---
+title: "regression-brms"
+author: "TEMoore"
+graphics: yes
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include = F}
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+# @@@@@ Knitr Options
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+# Set root directory to the project directory
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+
+# Set default knitr options: 
+# Suppress warnings and messages, cache chunks, 
+#  set default figure size to 6x8 at 300 dpi, and save a png and pdf
+knitr::opts_chunk$set(warning = F, message = F, collapse = T, cache = T,
+    fig.height = 6, fig.width = 8, dpi = 120,  
+    dev = 'png')
+
+```
+
+## Introduction
+
+There are many [good reasons]() to analyse your data using Bayesian methods. Historically, however, these methods have been computationally intensive and difficult to implement, requiring knowledge of sometimes challenging coding platforms and languages, like [WinBugs](), [JAGS](), or [Stan](). Newer R packages, however, including, [rstanarm](), and [brms]() have made building Bayesian regression models in R relatively [straightforward](). 
+
+Here I will introduce code to run some simple regression models using the brms package. This package offers a little more flexibility than rstanarm, although the both offer many of the same .... I encourage you to check out the extremely helpful vignettes written by [Paul Beurkner]().
+
+
+## The Data
+```{r loading_data}
+
+```
+
+
+## Packages
+
+```{r packages}
+
+```
+
+
