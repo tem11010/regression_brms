@@ -605,11 +605,15 @@ ggplot()+
   
   geom_smooth(aes(x = pred.1[,1], y = log(diamonds.test$price)), method = "lm", color = "red", lty = 2)+
   
+<<<<<<< HEAD
   geom_text(aes(x=6, y=9.5, label = lb1, size = 8), parse=TRUE, show.legend = F) +
   
   xlab("Predicted") +
   
   ylab("Observed")
+=======
+  geom_text(aes(x=6, y=9.5, label = lb1, size = 8), parse=TRUE, show.legend = F)
+>>>>>>> 2179bdbd1c043d9e89637a40de70eac929e291f7
 ```
 
 ![](index_files/figure-html/prediction-1.png)<!-- -->
