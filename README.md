@@ -18,7 +18,7 @@ editor_options:
 
 ## Introduction
 
-There are many [good reasons](http://andrewgelman.com/2016/12/13/bayesian-statistics-whats/ "good reasons") to analyse your data using Bayesian methods.Historically, however, these methods have been computationally intensive and difficult to implement, requiring knowledge of sometimes challenging coding platforms and languages, like [WinBUGS](https://www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-winbugs/ "WinBUGS"), [JAGS](http://mcmc-jags.sourceforge.net/ "JAGS"), or [Stan](http://mc-stan.org/ "Stan"). Newer R packages, however, including, [r2jags](https://cran.r-project.org/web/packages/R2jags/index.html "r2jags"), [rstanarm](https://cran.r-project.org/web/packages/rstanarm/index.html "rstanarm"), and [brms](https://cran.r-project.org/web/packages/brms/index.html "brms") have made building Bayesian regression models in R relatively [straightforward](https://thinkinator.com/2016/01/12/r-users-will-now-inevitably-become-bayesians/ "straightforward"). For some background on Bayesian statistics, there is a Powerpoint presentation [here](https://www.k-state.edu/cnap/Bayesian%20statistics%20powerpoint.pptx "here").
+There are many [good reasons](http://andrewgelman.com/2016/12/13/bayesian-statistics-whats/ "good reasons") to analyse your data using Bayesian methods. Historically, however, these methods have been computationally intensive and difficult to implement, requiring knowledge of sometimes challenging coding platforms and languages, like [WinBUGS](https://www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-winbugs/ "WinBUGS"), [JAGS](http://mcmc-jags.sourceforge.net/ "JAGS"), or [Stan](http://mc-stan.org/ "Stan"). Newer R packages, however, including, [r2jags](https://cran.r-project.org/web/packages/R2jags/index.html "r2jags"), [rstanarm](https://cran.r-project.org/web/packages/rstanarm/index.html "rstanarm"), and [brms](https://cran.r-project.org/web/packages/brms/index.html "brms") have made building Bayesian regression models in R relatively [straightforward](https://thinkinator.com/2016/01/12/r-users-will-now-inevitably-become-bayesians/ "straightforward"). For some background on Bayesian statistics, there is a Powerpoint presentation [here](https://www.k-state.edu/cnap/Bayesian%20statistics%20powerpoint.pptx "here").
 
 Here I will introduce code to run some simple regression models using the brms package. This package offers a little more flexibility than rstanarm, although the both offer many of the same functionality. I encourage you to check out the extremely helpful [vignettes](https://github.com/paul-buerkner/brms/tree/master/vignettes "vignettes") written by Paul Buerkner. Paul's [Github](https://github.com/paul-buerkner/brms "Github") page is also a useful resource. I won't go into too much detail on prior selection, or demonstrating the full flexibility of the brms package (for that, check out the vignettes), but I will try to add useful links where possible. I will also go a bit beyond the models themselves to talk about model selection using loo, and model averaging
 
@@ -605,7 +605,11 @@ ggplot()+
   
   geom_smooth(aes(x = pred.1[,1], y = log(diamonds.test$price)), method = "lm", color = "red", lty = 2)+
   
-  geom_text(aes(x=6, y=9.5, label = lb1, size = 8), parse=TRUE, show.legend = F)
+  geom_text(aes(x=6, y=9.5, label = lb1, size = 8), parse=TRUE, show.legend = F) +
+  
+  xlab("Predicted") +
+  
+  ylab("Observed")
 ```
 
 ![](index_files/figure-html/prediction-1.png)<!-- -->
